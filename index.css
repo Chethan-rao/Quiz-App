@@ -64,3 +64,25 @@ button{
 button:hover{
     background-color: #732d91;
 }
+
+
+
+
+@media only screen and (max-width:768px){
+    .quiz-container{
+        max-width: 400px;
+    }
+    h2{
+        font-size: 15px
+    }
+    .quiz-header{
+        padding: 1.5rem;
+    }
+    ul li{
+        font-size: 14px;
+    }
+    button{
+    padding: 15px;
+    }
+
+}
