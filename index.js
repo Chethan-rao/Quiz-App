@@ -1,67 +1,67 @@
 const quizData = [
     {
         question: "Bharachukki Falls are in which state of India?",
-        a: 'Karnataka',
-        b: 'Andhra Pradesh',
-        c: 'Telangana',
-        d: 'Tamil Nadu',
-        correct: "a"
+        'a': 'Karnataka',
+        'b': 'Andhra Pradesh',
+        'c': 'Telangana',
+        'd': 'Tamil Nadu',
+        correct: 'a'
     },
     {
         question: "Jamuna river of Bangladesh is _______ river of India?",
-        a: 'Yamuna',
-        b: 'Teesta',
-        c: 'Brahamputra',
-        d: 'Ganga',
-        correct: "c"
+        'a': 'Yamuna',
+        'b': 'Teesta',
+        'c': 'Brahamputra',
+        'd': 'Ganga',
+        correct: 'c'
     },
     {
         question: "Indian Maritime University is located at:",
-        a: 'Hyderabad',
-        b: 'Vishakapatnam',
-        c: 'Chennai',
-        d: 'Kochi',
-        correct: "c"
+        'a': 'Hyderabad',
+        'b': 'Vishakapatnam',
+        'c': 'Chennai',
+        'd': 'Kochi',
+        correct: 'c'
     },
     {
         question: "Which of the following is the world’s largest peninsula?",
-        a: 'India',
-        b: 'South Africa',
-        c: 'Arabia',
-        d: 'Both A & B',
-        correct: "c"
+        'a': 'India',
+        'b': 'South Africa',
+        'c': 'Arabia',
+        'd': 'Both A & B',
+        correct: 'c'
     },
     {
         question: "Which of the following imaginary line almost divides India into two equal parts?",
-        a: 'Equator',
-        b: 'Tropic of cancer',
-        c: 'Tropic of capricorn',
-        d: 'Arctic circle',
-        correct: "b"
+        'a': 'Equator',
+        'b': 'Tropic of cancer',
+        'c': 'Tropic of capricorn',
+        'd': 'Arctic circle',
+        correct: 'b'
     },
     {
         question: "Which of the following river has the largest river basin in India?",
-        a: 'The Indus',
-        b: 'The Ganga',
-        c: 'The Brahmaputra',
-        d: 'The Krishna',
-        correct: "b"
+        'a': 'The Indus',
+        'b': 'The Ganga',
+        'c': 'The Brahmaputra',
+        'd': 'The Krishna',
+        correct: 'b'
     },
     {
         question: "Which of the following longitudes is the standard meridian of India?",
-        a: "69°30'E",
-        b: "75°30'E",
-        c: "82°30'E",
-        d: "90°30'E",
-        correct: "c"
+        'a': "69°30'E",
+        'b': "75°30'E",
+        'c': "82°30'E",
+        'd': "90°30'E",
+        correct: 'c'
     },
     {
         question: "The river Narmada is originate from.....",
-        a: "Satpura",
-        b: "Amarkantak",
-        c: "Brahmagiri",
-        d: "Slopes of the Western Ghats",
-        correct: "b"
+        'a': "Satpura",
+        'b': "Amarkantak",
+        'c': "Brahmagiri",
+        'd': "Slopes of the Western Ghats",
+        correct: 'b'
     }
 ]
 
@@ -143,8 +143,29 @@ submitBtn.addEventListener('click',()=>{
                     quiz.innerHTML = `<h2>Score: ${score}/5 🙂</h2> <button onclick="location.reload()">Try again</button`;
                 else 
                 quiz.innerHTML = `<h2>Score: ${score}/5 ☹️</h2> <button onclick="location.reload()">Try again</button`;
+                quiz.innerHTML += `<button onclick="answers()">Click for answers</button>`;
                 } 
+                
 
         }      
 });
+var flag=0;
+function answers(){
+    if(flag===0){
+    for(var i=0;i<arr.length-1;i++)
+    {
+        var ind = quizData[arr[i]].correct;
+        var no = i+1;
+        quiz.innerHTML += no + ". " +quizData[arr[i]].question + "<br>" +"Ans: "+ "<b>"+quizData[arr[i]][ind]+"</b>" + "<br><br>";
+    }
+    }
+    flag++;
+}
+
+
+
+
+
+
+
 
